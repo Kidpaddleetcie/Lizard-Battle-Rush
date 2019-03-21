@@ -27,6 +27,7 @@ let lezollard_box = document.getElementById("lezollard_box");
 let ennemy = document.getElementById("Enemy");
 let actions = document.getElementById("Actions");
 
+
 // Les données de base
 let multi = 1;
 
@@ -74,7 +75,7 @@ let wa = [Lance, Saucisse, Boudin, Ballon, Batte2Baseball, Poing];
 let ca = 0;
 let ta = 1;
 let da = 1
-
+let satan = false;
 /* Les fonctions */
 function Attaque_plus() {
     if (lezollard >= 5) {
@@ -86,7 +87,7 @@ function Attaque_plus() {
         }
     }
     afficheTOUT()
-    lezollard_plus()
+    gameover()
 }
 
 function Defense_plus() {
@@ -99,7 +100,7 @@ function Defense_plus() {
         }
     }
     afficheTOUT()
-    lezollard_plus()
+    gameover()
 }
 
 function Change_arme() {
@@ -118,77 +119,102 @@ function multi_inc() {
         ac = ac * 2;
         dc = dc * 2;
         afficheTOUT()
-        lezollard_plus()
+        gameover()
     } else {
         multi_btn.innerHTML = "Re-cliquer quand vous aurez 100 Lézollards ! "
     }
 }
 
 function attaque() {
-    if ((ta - dc) <= (ac - da)) {
-        ta += (kills * 2) ^ Math.round(Math.PI + wa[ca].atk);
-        da += kills + Math.round(ta / 2);
-        victories += 1;
-        lezollard += 20;
-        canvas_ADV.classList.add('hit');
-        setTimeout(function() { canvas_ADV.classList.remove('hit'); }, 200);
-        afficheTOUT()
-        lezollard_plus()
+    if (satan === false) {
+        if ((ta - dc) <= (ac - da)) {
+            ta += (kills * 2) ^ Math.round(Math.PI + wa[ca].atk);
+            da += kills + Math.round(ta / 2);
+            victories += 1;
+            lezollard += 20;
+            canvas_ADV.classList.add('hit');
+            setTimeout(function() { canvas_ADV.classList.remove('hit'); }, 200);
+            afficheTOUT()
+            gameover()
+        } else {
+            afficheTOUT()
+            ta += (kills * 2) ^ Math.round(Math.PI + wa[ca].atk);
+            da += kills + Math.round(ta / 2);
+            kills += 1;
+            ca += 1
+            canvas_CH.classList.add('hit');
+            setTimeout(function() { canvas_CH.classList.remove('hit'); }, 200);
+            afficheTOUT();
+            gameover()
+        }
     } else {
-        afficheTOUT()
-        ta += (kills * 2) ^ Math.round(Math.PI + wa[ca].atk);
-        da += kills + Math.round(ta / 2);
-        kills += 1;
-        ca += 1
-        canvas_CH.classList.add('hit');
-        setTimeout(function() { canvas_CH.classList.remove('hit'); }, 200);
-        afficheTOUT();
-        lezollard_plus()
+        if ((ta - dc) <= (ac - da)) {
+            player.style.display = "none";
+            actions.style.display = "none";
+            ennemy.style.display = "none";
+            body.innerHTML = "<p class=\"satan_vaincu\">Vous avez gagner contre Satan :D </p>"
+
+        } else {
+            player.style.display = "none";
+            actions.style.display = "none";
+            ennemy.style.display = "none";
+
+            body.innerHTML = "<p class=\"satan_gagne\">Vous avez perdu contre Satan...</p>"
+        }
     }
 }
 
 function afficheTOUT() {
-    ATK_CH.innerHTML = ac;
-    DEF_CH.innerHTML = dc;
-    K_NBR.innerHTML = kills;
-    DEF_ADV.innerHTML = da;
-    ATK_ADV.innerHTML = ta;
-    if (ca > wa.length - 1) {
-        ca = 0;
-        ARME_ADV.innerHTML = wa[ca].nom;
-    } else { ARME_ADV.innerHTML = wa[ca].nom; }
+    if (satan === true) {
+        ennemy.classList.add("satan");
+    } else {
+        ATK_CH.innerHTML = ac;
+        DEF_CH.innerHTML = dc;
+        K_NBR.innerHTML = kills;
+        DEF_ADV.innerHTML = da;
+        ATK_ADV.innerHTML = ta;
+        if (ca > wa.length - 1) {
+            ca = 0;
+            ARME_ADV.innerHTML = wa[ca].nom;
+        } else { ARME_ADV.innerHTML = wa[ca].nom; }
 
 
-    V_NBR.innerHTML = victories;
-    LZD.innerHTML = lezollard + "£";
+        V_NBR.innerHTML = victories;
+        LZD.innerHTML = lezollard + "£";
 
-    if (victories < NE.length) {
-        nom_ennemy.innerHTML = NE[victories];
-    } else if (victories < NE.length * 2) {
-        nom_ennemy.innerHTML = "Jean-" + NE[victories / 2];
+        if (victories < NE.length) {
+            nom_ennemy.innerHTML = NE[victories];
+        } else if (victories < NE.length * 2) {
+            nom_ennemy.innerHTML = "Jean-" + NE[victories - (NE.length * 1)];
 
-    } else if (victories < NE.length * 3) {
-        nom_ennemy.innerHTML = NE[victories / 3] + " ,Le vrai !";
+        } else if (victories < NE.length * 3) {
+            nom_ennemy.innerHTML = NE[victories - (NE.length * 2)] + " ,Le vrai !";
 
-    } else if (victories < NE.length * 4) {
-        nom_ennemy.innerHTML = NE[victories / 4] + " ,La brute !";
+        } else if (victories < NE.length * 4) {
+            nom_ennemy.innerHTML = NE[victories - (NE.length * 3)] + " ,La brute !";
 
-    } else if (victories < NE.length * 5) {
-        nom_ennemy.innerHTML = NE[victories / 5] + " ,Le DIEU !";
+        } else if (victories < NE.length * 5) {
+            nom_ennemy.innerHTML = NE[victories - (NE.length * 4)] + " ,Le DIEU !";
+        } else {
+            satan = true;
+            nom_ennemy.innerHTML = "SATAN !!!!!"
+        }
     }
-
 }
 
 
-function lezollard_plus() {
+function gameover() {
     if (lezollard === 0 && victories >= 1 && (ta - dc) > (ac - da)) {
         player.classList.add("game_over");
+        replay.classList.remove("replay");
+        replay.classList.add("replay_gameover");
         actions.style.display = "none";
         ennemy.style.position = "absolute";
         ennemy.style.backgroundColor = "white";
         ennemy.style.left = "15%";
         lezollard_box.style.display = "none";
         V_NBR.innerHTML = victories + "<p style=\"font-size:20px; \">Game Over</p>";
+
     }
 }
 

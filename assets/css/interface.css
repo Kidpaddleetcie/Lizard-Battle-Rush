@@ -19,4 +19,12 @@ ol { list-style: none; }
 .interface .ADV { display: inline-block; width: 33%; border: 1px solid green; }
 
 footer { background-color: black; width: 100%; color: white; height: 50px; display: -webkit-box; display: -ms-flexbox; display: flex; margin-left: auto; padding-bottom: 25px; bottom: 0; left: 0; position: fixed; font-size: 15px; font-weight: bold; text-align: center; }
+
+footer .replay { position: absolute; bottom: 5px; right: 5px; background-color: black; color: #015708; }
+
+footer .replay:hover { background-color: #015708; color: black; }
+
+.replay_gameover { position: absolute; bottom: 5px; right: 5px; animation: diable 2s infinite alternate-reverse; color: white; text-shadow: 0 1px 0 black; background-color: red; -webkit-filter: opacity(0.5); filter: opacity(0.5); }
+
+.replay_gameover:hover { animation: diable 2s infinite alternate-reverse; text-shadow: 0 1px 0 black; color: white; -webkit-filter: opacity(1); filter: opacity(1); }
 /*# sourceMappingURL=interface.css.map */

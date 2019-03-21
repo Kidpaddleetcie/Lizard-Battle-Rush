@@ -2,12 +2,10 @@
     0% {
         box-shadow: rgb(250, 250, 250) 0 0 0;
         transform: scale(1.0);
-        background: white;
     }
     100% {
         box-shadow: inset 0px 0px 5px rgb(255, 0, 0);
         transform: scale(1.2);
-        background: red;
     }
 }
 
@@ -18,6 +16,17 @@
     100% {
         box-shadow: rgb(51, 49, 49) 0 0 10px;
         border: solid 10px 10px 10px 10px black;
+    }
+}
+
+@keyframes diable {
+    0% {
+        box-shadow: rgb(250, 4, 4) 0 0 0;
+        transform: scale(1.0);
+    }
+    100% {
+        box-shadow: rgb(87, 0, 0) 0 0 10px;
+        transform: scale(1.2);
     }
 }
 
@@ -33,4 +42,21 @@
     filter: grayscale(1.0);
     background-color: black;
     color: white;
+}
+
+.satan {
+    animation: diable 3s infinite alternate-reverse;
+    color: black;
+    text-shadow: 0 1px 0 white;
+    filter: contrast(200%);
+}
+
+.satan_vaincu {
+    color: blue;
+    background-color: white;
+}
+
+.satan_gagne {
+    color: red;
+    background-color: black;
 }
