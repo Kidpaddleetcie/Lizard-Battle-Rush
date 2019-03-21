@@ -1,0 +1,22 @@
+header { text-align: center; border: green 5px solid; margin: 0; background: -webkit-linear-gradient(green, #07f51b); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+ol { list-style: none; }
+
+.interface .CH { display: inline-block; width: 33%; border: 1px solid green; }
+
+.interface .CH button { padding-bottom: 20px; width: 200px; height: 20px; float: right; text-align: center; border: black 1px solid; -webkit-box-shadow: inset #570101 0 0 5px; box-shadow: inset #570101 0 0 5px; margin: 0; background: -webkit-linear-gradient(maroon, #570101); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.interface .CH button:hover { background: -webkit-linear-gradient(#248000, #3be706); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; -webkit-box-shadow: inset #015708 0 0 5px; box-shadow: inset #015708 0 0 5px; }
+
+.interface .CH button:active { background: -webkit-linear-gradient(#248000, #2b4922); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; padding-bottom: 21px; }
+
+.interface .actions { display: inline-block; width: 33%; }
+
+.interface .actions .attaque { position: absolute; left: 40%; top: 50%; width: 20%; -webkit-box-shadow: inset red 0 1px 5px; box-shadow: inset red 0 1px 5px; background: -webkit-linear-gradient(#800900, #f82702); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.interface .actions .multi { position: absolute; left: 40%; top: 55%; width: 20%; height: 3%; font-size: 10px; -webkit-box-shadow: inset #24545a 0 1px 5px; box-shadow: inset #24545a 0 1px 5px; background: -webkit-linear-gradient(#070653, #0244f8); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.interface .ADV { display: inline-block; width: 33%; border: 1px solid green; }
+
+footer { background-color: black; width: 100%; color: white; height: 50px; display: -webkit-box; display: -ms-flexbox; display: flex; margin-left: auto; padding-bottom: 25px; bottom: 0; left: 0; position: fixed; font-size: 15px; font-weight: bold; text-align: center; }
+/*# sourceMappingURL=interface.css.map */

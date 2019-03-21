@@ -1,0 +1,98 @@
+header {
+    text-align: center;
+    border: green 5px solid;
+    margin: 0;
+    background: -webkit-linear-gradient(green, #07f51b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+ol {
+    list-style: none;
+}
+
+.interface {
+    .CH {
+        display: inline-block;
+        width: 33%;
+        border: 1px solid green;
+        button {
+            padding-bottom: 20px;
+            width: 200px;
+            height: 20px;
+            float: right;
+            text-align: center;
+            border: rgb(0, 0, 0) 1px solid;
+            box-shadow: inset #570101 0 0 5px;
+            margin: 0;
+            background: -webkit-linear-gradient(rgb(128, 0, 0), #570101);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            &:hover {
+                background: -webkit-linear-gradient(rgb(36, 128, 0), #3be706);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                box-shadow: inset #015708 0 0 5px;
+            }
+            &:active {
+                background: -webkit-linear-gradient(rgb(36, 128, 0), #2b4922);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                padding-bottom: 21px;
+            }
+        }
+    }
+    .actions {
+        display: inline-block;
+        width: 33%;
+        .attaque {
+            position: absolute;
+            left: 40%;
+            top: 50%;
+            width: 20%;
+            box-shadow: inset red 0 1px 5px;
+            background: -webkit-linear-gradient(rgb(128, 9, 0), #f82702);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .multi {
+            position: absolute;
+            left: 40%;
+            top: 55%;
+            width: 20%;
+            height: 3%;
+            font-size: 10px;
+            box-shadow: inset rgb(36, 84, 90) 0 1px 5px;
+            background: -webkit-linear-gradient(rgb(7, 6, 83), #0244f8);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    .ADV {
+        display: inline-block;
+        width: 33%;
+        border: 1px solid green;
+    }
+}
+
+footer {
+    background-color: black;
+    width: 100%;
+    color: white;
+    height: 50px;
+    display: flex;
+    margin-left: auto;
+    padding-bottom: 25px;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/lizards.scss"
+    ],
+    "names": [],
+    "file": "lizards.min.css"
+}

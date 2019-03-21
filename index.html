@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lizard Battle Rush</title>
+    <link rel="stylesheet" href="assets/css/effects.css">
+    <link rel="stylesheet" href="assets/css/interface.css">
+    <link rel="stylesheet" href="assets/css/lizards.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1 class="Nom_Du_Jeu">Lizard Battle Rush</h1>
+    </header>
+    <section class="interface">
+
+        <div class="CH" id="Player">
+            <p class="niveaux">Niveau: <span id="V_nbr"></span></p>
+            <p id="lezollard_box" class="Lézollard">Lézollard: <span id="LZD"></span></p>
+            <canvas id="CH_canvas" class="CH_canvas" width="200px" height="200px"></canvas>
+            <div class="stats">
+                <ol>
+                    <li>Attaque:<span id="ATK_CH"></span><button class="ATK" id="Give_ATK_CH">Entrainer</button></li>
+                    <li>Defense:<span id="DEF_CH"></span><button class="DEF" id="Give_DEF_CH">Entrainer</button></li>
+                    <li>Arme:<span id="ARME_CH"></span><button class="ARME" id="Give_ARME_CH">Switcher d'arme</button></li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="actions" id="Actions">
+            <button id="ATTAQUE_BTN" class="attaque">ATTAQUE</button>
+            <button id="MULTI_BTN" class="multi">Multiplicateur <span id="multi"></span></button>
+        </div>
+
+
+        <div class="ADV" id="Enemy">
+            <p class="niveaux">Niveau: <span id="K_nbr"></span></p>
+            <p class="nom">Nom: <span id="nom_ennemy"></span></p>
+            <canvas id="ADV_canvas" class="ADV_canvas" width="200px" height="200px"></canvas>
+            <div class="stats">
+                <ol>
+                    <li>Attaque:<span id="ATK_ADV"></span></li>
+                    <li>Defense:<span id="DEF_ADV"></span></li>
+                    <li>Arme:<span id="ARME_ADV"></span></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>Une idée originale provenant de <a>KékéFlipnote</a></p>
+    </footer>
+    <script src="assets/js/LizardBattleRush.js"></script>
+</body>
+
+</html>
