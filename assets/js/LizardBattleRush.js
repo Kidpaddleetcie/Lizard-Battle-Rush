@@ -30,7 +30,7 @@ let actions = document.getElementById("Actions");
 
 // Les données de base
 let multi = 1;
-
+let multiprix=100;
 let lezollard = 20;
 
 let ac = 1;
@@ -114,8 +114,9 @@ function Change_arme() {
 }
 
 function multi_inc() {
-    if (lezollard > 100) {
-        lezollard -= 100;
+    if (lezollard > multiprix) {
+        lezollard -= multiprix;
+        multiprix*10;
         ac = ac * 2;
         dc = dc * 2;
         afficheTOUT()
